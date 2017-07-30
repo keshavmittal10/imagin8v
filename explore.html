@@ -49,11 +49,14 @@
    </div>
    
    <!-- Main Heading of the page -->
-   <div class="container" style="background-color:#fbf9cf; margin-top:72px">
-   <div class="content section" style="max-width:100%;"> 
-     <img class="mySlides animate-right" src="./images/slide1.png" style="width:100%">
-     <img class="mySlides animate-right" src="./images/slide1.png" style="width:100%">
+   <div class="hide-small" style="margin-top:72px">
+   <img src="./images/slide1.png" style="width:100%; min-height:400px"/>
    </div>
+   <div class="display-container center hide-medium hide-large" style="margin-top:72px;">
+   <img src="./images/explore.png" style="width:100%; min-height:200px;"/>
+    <div class="display-middle">
+     <h1 style="color:#6767af;">EXPLORE</h1>
+	</div>
    </div>
    
    <!-- first goes here -->
@@ -146,19 +149,27 @@
     }
 }
 
-var myIndex = 0;
-carousel();
+var slideIndex = 1;
+showDivs(slideIndex);
 
-function carousel() {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";  
-    }
-    myIndex++;
-    if (myIndex > x.length) {myIndex = 1}    
-    x[myIndex-1].style.display = "block";  
-    setTimeout(carousel, 4000);
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" white", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " white";
 }
 </script> 
 
