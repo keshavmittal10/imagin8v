@@ -380,7 +380,6 @@ input[type=checkbox].check:disabled+.validate,input[type=radio].radio:disabled+.
     padding-bottom: 56.25%; 
 	height: 0; 
 	overflow: hidden;
-	max-width:100%;
 }
 
 .video-responsive iframe{
@@ -394,6 +393,14 @@ input[type=checkbox].check:disabled+.validate,input[type=radio].radio:disabled+.
 	font-family: 'Lora', serif;
 	font-weight: 500;
 	font-size: 20px;
+}
+.sans{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 100;
+}
+.lorah{
+	font-family: 'Lora', serif;
+	font-weight: bold;
 }
 
 
